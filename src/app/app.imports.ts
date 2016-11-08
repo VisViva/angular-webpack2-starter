@@ -5,11 +5,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { useLogMonitor } from '@ngrx/store-log-monitor';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 
 import { routes } from './app.routing';
 import { rootReducer } from './reducers';
-import { StoreDevToolsModule } from './features/store-devtools.module';
 import { UserEffects } from './user/user.effects';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
@@ -21,7 +20,8 @@ if (ENV === 'development' && !AOT &&
       visible: true,
       position: 'right'
     })
-  })
+  }),
+  StoreLogMonitorModule
 ]);
 
 export const APP_IMPORTS = [
@@ -30,6 +30,5 @@ export const APP_IMPORTS = [
   RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   RouterStoreModule.connectRouter(),
   StoreModule.provideStore(rootReducer),
-  STORE_DEV_TOOLS_IMPORTS,
-  StoreDevToolsModule
+  STORE_DEV_TOOLS_IMPORTS
 ];

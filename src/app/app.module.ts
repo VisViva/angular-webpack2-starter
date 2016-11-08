@@ -9,6 +9,7 @@ import { Store } from '@ngrx/store';
 import { APP_DECLARATIONS } from './app.declarations';
 import { APP_IMPORTS } from './app.imports';
 import { APP_PROVIDERS } from './app.providers';
+import { APP_SCHEMAS } from './app.schemas';
 
 import { AppComponent } from './components/app/app.component';
 
@@ -25,7 +26,8 @@ import { AppState } from './reducers';
     HttpModule,
   ],
   bootstrap: [AppComponent],
-  providers: [APP_PROVIDERS]
+  providers: [APP_PROVIDERS],
+  schemas: [APP_SCHEMAS]
 })
 
 export class AppModule {

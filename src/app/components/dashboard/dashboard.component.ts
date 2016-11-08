@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { AppState } from '../reducers';
+import { AppState } from '../../reducers';
 import { Store } from '@ngrx/store';
 
 @Component({

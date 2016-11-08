@@ -3,9 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './features/dashboard.component';
-import { routes } from './app.routing';
-import { StoreDevToolsModule } from './features/store-devtools.module';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { routes } from '../../app.routing';
+import { StoreDevToolsComponent } from '../store-devtools/store-devtools.component';
 
 import 'rxjs/add/operator/takeUntil';
 
@@ -14,11 +14,10 @@ describe('App Component', () => {
     TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
-        RouterTestingModule.withRoutes(routes),
-        StoreDevToolsModule
+        RouterTestingModule.withRoutes(routes)
         ],
       providers: [],
-      declarations: [AppComponent, DashboardComponent]
+      declarations: [AppComponent, DashboardComponent, StoreDevToolsComponent]
     });
   });
 });

@@ -65,7 +65,6 @@ const DLL_VENDORS = [
   '@angular/core',
   '@angular/forms',
   '@angular/http',
-  '@angular/material',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
   '@angular/platform-server',
@@ -84,8 +83,6 @@ const DLL_VENDORS = [
 ];
 
 const COPY_FOLDERS = [
-  { from: 'src/assets', to: 'assets' },
-  { from: 'src/app/main.css' },
   { from: 'src/app/styles.css' },
   ...MY_COPY_FOLDERS
 ];
